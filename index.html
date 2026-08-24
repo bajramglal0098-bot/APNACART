@@ -200,7 +200,7 @@
     function addToCart(name, price) {
       cart.push({
         name: name,
-        price: price
+        price: Number(price)
       });
 
       showCart();
