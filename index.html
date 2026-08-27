@@ -196,7 +196,20 @@
 
   <script>
     let cart = [];
+function searchProducts() {
+  const search = document.getElementById("searchBox").value.toLowerCase();
+  const products = document.querySelectorAll(".product");
 
+  products.forEach(product => {
+    const name = product.querySelector("h3").innerText.toLowerCase();
+
+    if (name.includes(search)) {
+      product.style.display = "";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
     function addToCart(name, price) {
       cart.push({
         name: name,
