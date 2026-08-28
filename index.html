@@ -284,16 +284,33 @@ function searchProducts() {
   );
 let orderId = "APNACART-" + Date.now().toString().slice(-8);
 
+function makeVerificationCode(text) {
+  let hash = 0;
+
+  for (let i = 0; i < text.length; i++) {
+    hash = ((hash << 5) - hash) + text.charCodeAt(i);
+    hash |= 0;
+  }
+
+  return Math.abs(hash).toString(36).toUpperCase().slice(0, 8);
+}
+
+let verificationData = orderId + "|" + items + "|" + total;
+
+let verificationCode = makeVerificationCode(verificationData);
+
 let message =
 "ApnaCart Order\n\n" +
 "Order ID: " + orderId + "\n" +
+"Verification Code: " + verificationCode + "\n\n" +
 "Naam: " + name + "\n" +
 "Mobile: " + mobile + "\n" +
 "Address: " + address + "\n\n" +
 "Products:\n" + items +
 "\n\nTotal: ₹" + total +
-"\n\n⚠️ Note: WhatsApp me badli hui price valid nahi hogi." +
-"\nOrder website ki original price par hi confirm hoga.";
+"\n\n⚠️ PRICE VERIFICATION\n" +
+"Website ki original price hi valid hogi.\n" +
+"WhatsApp message me price badli hui mile to order confirm na karein.";
 
 let whatsappNumber = "919468882106";
 
