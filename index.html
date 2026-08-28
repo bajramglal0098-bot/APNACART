@@ -283,21 +283,21 @@ function searchProducts() {
     0
   );
 
-  let message =
-    "🛒 ApnaCart Order\n\n" +
-    "Naam: " + name + "\n" +
-    "Mobile: " + mobile + "\n" +
-    "Address: " + address + "\n\n" +
-    "Products:\n" + items +
-    "\n\nTotal: ₹" + total;
+ let message =
+  "ApnaCart Order\n\n" +
+  "Naam: " + name + "\n" +
+  "Mobile: " + mobile + "\n" +
+  "Address: " + address + "\n\n" +
+  "Products:\n" + items +
+  "\n\nTotal: ₹" + total;
 
-  let whatsappNumber = "919468882106";
+let whatsappNumber = "919468882106";
 
-  let url =
-    "https://api.whatsapp.com/send?phone=" +
-    whatsappNumber +
-    "&text=" +
-    encodeURIComponent(message);
+let url =
+  "https://wa.me/" +
+  whatsappNumber +
+  "?text=" +
+  encodeURIComponent(message);
 
 window.location.href = url; 
 }  
