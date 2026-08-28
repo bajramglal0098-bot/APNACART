@@ -282,8 +282,11 @@ function searchProducts() {
     (sum, item) => sum + item.price,
     0
   );
+let orderId = "APNACART-" + Date.now().toString().slice(-8);
+
 let message =
 "ApnaCart Order\n\n" +
+"Order ID: " + orderId + "\n" +
 "Naam: " + name + "\n" +
 "Mobile: " + mobile + "\n" +
 "Address: " + address + "\n\n" +
