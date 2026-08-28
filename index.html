@@ -282,14 +282,15 @@ function searchProducts() {
     (sum, item) => sum + item.price,
     0
   );
-
- let message =
-  "ApnaCart Order\n\n" +
-  "Naam: " + name + "\n" +
-  "Mobile: " + mobile + "\n" +
-  "Address: " + address + "\n\n" +
-  "Products:\n" + items +
-  "\n\nTotal: ₹" + total;
+let message =
+"ApnaCart Order\n\n" +
+"Naam: " + name + "\n" +
+"Mobile: " + mobile + "\n" +
+"Address: " + address + "\n\n" +
+"Products:\n" + items +
+"\n\nTotal: ₹" + total +
+"\n\n⚠️ Note: WhatsApp me badli hui price valid nahi hogi." +
+"\nOrder website ki original price par hi confirm hoga.";
 
 let whatsappNumber = "919468882106";
 
