@@ -259,7 +259,7 @@ function searchProducts() {
       showCart();
     }
 
-   function placeOrder() {
+ function placeOrder() {
   if (cart.length === 0) {
     alert("Pehle product cart mein add karein.");
     return;
@@ -274,8 +274,14 @@ function searchProducts() {
   let address = prompt("Delivery address likhiye:");
   if (!address) return;
 
-  let items = cart.map(item => item.name + " - ₹" + item.price).join("\n");
-  let total = cart.reduce((sum, item) => sum + item.price, 0);
+  let items = cart
+    .map(item => item.name + " - ₹" + item.price)
+    .join("\n");
+
+  let total = cart.reduce(
+    (sum, item) => sum + item.price,
+    0
+  );
 
   let message =
     "🛒 ApnaCart Order\n\n" +
@@ -286,9 +292,15 @@ function searchProducts() {
     "\n\nTotal: ₹" + total;
 
   let whatsappNumber = "919468882106";
-  let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+
+  let url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
 
   window.open(url, "_blank");
+}  
 } 
   </script>
 
