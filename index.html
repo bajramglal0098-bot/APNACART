@@ -294,12 +294,12 @@ function searchProducts() {
   let whatsappNumber = "919468882106";
 
   let url =
-    "https://wa.me/" +
+    "https://api.whatsapp.com/send?phone=" +
     whatsappNumber +
-    "?text=" +
+    "&text=" +
     encodeURIComponent(message);
 
-  window.open(url, "_blank");
+window.location.href = url; 
 }  
   </script>
 
